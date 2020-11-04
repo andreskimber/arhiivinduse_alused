@@ -94,7 +94,7 @@ Sümbolite muutmiseks tee kihil topeltkliki ja vaata, et avanenud aknas oleks va
 
 Lisa maakonnanimi valides samas menüüs vali vasakult *Labels* ning seal *No labels* asemel *Single labels*. *Value* alt vali *MNIMI* ja vajuta all paremal OK.
 
-```{r harjutus1, echo=F, fig.show='hold', out.width= "100%", fig.cap="Harjus 1 tulemus"}
+```{r harjutus1, echo=F, fig.align = 'center', fig.show='hold', out.width= "100%", fig.cap="Harjutus 1 tulemus"}
 knitr::include_graphics(here::here("imgs", "harjutus_1.png"))
 ```
 
