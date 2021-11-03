@@ -2,7 +2,7 @@
 title: "Ajaloolised kaardid ja GIS: praktikum"
 subtitle: "Arhiivinduse alused (FLAJ.02.168)"
 author: "Andres Kimber"
-date: "04.11.2020"
+date: "10.11.2021"
 output:
     html_document:
         df_print: paged
@@ -19,13 +19,13 @@ QGISil on alati kaks hetkeversioon: stabiilne *Long term release* ja uusimate v�
 
 QGIS 3.10 saab alla laadida [ametlikult kodulehelt](https://qgis.org/en/site/forusers/download.html), valides enda arvuti operatsioonisüsteemile sobiva variandi. Windowsi jaoks *QGIS Standalone Installer Version 3.10 (64 bit)* ja macOSi jaoks *QGIS macOS Installer Version 3.10*. Kui allalaadimine on lõppenud, ava fail ning installi see nagu iga teine programm. Kasutada vaikimisi valikuid.
 
-```{r qgis_3.1, echo=F, fig.show='hold', fig.align='center', out.width= "100%"}
-knitr::include_graphics(here::here("imgs", "qgis_3.10.png"))
+```{r qgis_3.1, echo=F, fig.show='hold', fig.align='center', out.width= "60%"}
+knitr::include_graphics(here::here("imgs", "qgis_3.20.png"))
 ```
 
 # Andmed ja failihaldus
 
-Segaduste vältimiseks soovitan kasutada kaustade strutktuuri, kus selle kursuse kaustas on teil QGISi projekti fail(id) .qgz ja kaks kausta *andmed* ja *kaardid*, kuhu panete vastavalt kõik praktikumis kasutatavad andmed ja valminud kaks kaarti. Võimalike probleemide vältimiseks võiks kursuse kaust olla kohas, kus ei ole täpitähti. Nt *C:/ut/sygis_2020/arhiivinduse_alused/*.
+Segaduste vältimiseks soovitan kasutada kaustade strutktuuri, kus selle kursuse kaustas on teil QGISi projekti fail(id) .qgz ja kaks kausta *andmed* ja *kaardid*, kuhu panete vastavalt kõik praktikumis kasutatavad andmed ja valminud kaks kaarti. Võimalike probleemide vältimiseks võiks kursuse kaust olla kohas, kus ei ole täpitähti. Nt *C:/ut/sygis_2021/arhiivinduse_alused/*.
 
 Struktuuri näide: 
 
@@ -40,11 +40,11 @@ Struktuuri näide:
         - harjutus_3_kimber.jpeg
         - jne
         
-Praktikumis kasutatavad andmed leiate [Moodle'ist](https://moodle.ut.ee/). Laadige need alla, pakkige lahti (parempoolne klikk ja *Extract here*) ja asetage kausta *andmed*. Soovi korral võite Eesti maakondade kihi ka ise [Maa-ameti Geoportaalist](https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html) alla laadida, kuna tegu on avalike ruumiandmetega. Õige fail on *Maakond SHP*. Klikkides lehel *Ruumiandmed" leiab ka rohkelt muid andmeid.
+Praktikumis kasutatavad andmed leiate [Moodle'ist](https://moodle.ut.ee/). Laadige need alla, pakkige lahti (parempoolne klikk ja *Extract here*) ja asetage kausta *andmed*.
 
 ## Esmane seadistamine ja kasutajaliides
 
-Avage töölaual kaustas QGIS 3.10 *QGIS Desktop 3.10.10 with GRASS 7.8.3*. Sageli on esimesel korral avades QGIS eestikeelne. See on küll tore, kuid kahjuks on tõlge poolik ning internetist abi otsides on vähe kasu eestikeelsetest terminitest. Niisiis kasutame kursuse käigus ingliskeelset versiooni. Selleks vali ülevalt servast menüüst *Seaded → Valikud → Üldine* (vasakul servas). Tee linnuke *Override system locale* ette. Vali *User Interface Translation* rippmenüüst *American English*. *Locale (numbers, date and currency formats)* juures ei tule midagi muuta. Tähendab, et see peab jääma Estonian Estonia (et_EE). Vajuta all servas *OK*. Sulge QGIS ning ava uuesti. Nüüd on programm ingliskeelne.
+Avage töölaual kaustas QGIS 3.20.3 *QGIS Desktop 3.20.3*. Sageli on esimesel korral avades QGIS eestikeelne. See on küll tore, kuid kahjuks on tõlge poolik ning internetist abi otsides on vähe kasu eestikeelsetest terminitest. Niisiis kasutame kursuse käigus ingliskeelset versiooni. Selleks vali ülevalt servast menüüst *Seaded → Valikud → Üldine* (vasakul servas). Tee linnuke *Override system locale* ette. Vali *User Interface Translation* rippmenüüst *American English*. *Locale (numbers, date and currency formats)* juures ei tule midagi muuta. Tähendab, et see peab jääma Estonian Estonia (et_EE). Vajuta all servas *OK*. Sulge QGIS ning ava uuesti. Nüüd on programm ingliskeelne.
 
 ```{r changelanguage, echo=F, fig.show='hold', fig.align='center', out.width= "100%", fig.cap="Keele muutmine QGISis."}
 knitr::include_graphics(here::here("imgs", "change_language.gif"))
@@ -214,7 +214,7 @@ _ Sarnaselt eelmisele punktile lisa kaardile nimi. Näiteks *Kultuurimälestiste
 
 # Harjutus 3
 
-Märkida tuleb vanalt topograafiliselt kaardilt uurimispiirkonna piires Tartust u 7 km kirdes asuva Vorbuse asula läheduses oleva Metsaküla küla suuremad teed ja talud, mida tänapäeval enam pole. Piirkonnas toimusid 1960.–70. aastate maaparandusega (uute põldude rajamisega) seoses mitmed ümberkorraldused.
+Märkida tuleb vanalt topograafiliselt kaardilt uurimispiirkonna piires Tartust u 7 km kirdes asuva Vorbuse asula läheduses oleva Metsaküla küla suuremad teed ja talud, mida tänapäeval enam pole. Piirkonnas toimusid 1960.–70. aastate maaparandusega (uute põldude rajamisega) seoses mitmed ümberkorraldused. Märgi vähemalt neli talu ja kolm teelõiku.
 
 ```{r vorbuse, echo=F, fig.show='hold', fig.align='center', out.width= "80%", fig.cap="Vorbuse piirkonna talud ja teed, mida tänapäeval enam pole"}
 knitr::include_graphics(here::here("imgs", "vorbuse.jpeg"))
@@ -284,7 +284,7 @@ Märgi kihiga *vorbuse_teed* uurimispiirkonna piires need teed, mida tänapäeva
 
 # Kaartide esitamine
 
-Lae Moodle'isse ülesande *GIS praktikum* juurde harjutuste 2 ja 3 tulemusena valminud kaardid. **Tähtaeg 25.11.** 
+Lae Moodle'isse ülesande *GIS praktikum* juurde harjutuste 2 ja 3 tulemusena valminud kaardid. **Tähtaeg 17.11.** 
 
 # Andmed
 
@@ -296,8 +296,8 @@ Kultuurimälestiste andmeid võib vajadusel minu käest küsida. Kirjuta andres.
 
 **QGISi juhendid ja õpikud**
 
-- [QGIS Project. 2020. A Gentle Introduction to GIS](docs.qgis.org/3.10/en/docs/gentle_gis_introduction/index.html)
-- [QGIS Project. 2020. QGIS User Guide. Release 3.10.](docs.qgis.org/3.10/en/docs/user_manual/index.html)
+- [QGIS Project. 2020. A Gentle Introduction to GIS](https://docs.qgis.org/3.16/en/docs/gentle_gis_introduction/index.html)
+- [QGIS Project. 2021. QGIS User Guide. Release 3.16.](https://docs.qgis.org/3.16/en/docs/user_manual/index.html)
 - [Cutts & Graser. 2018. Learn QGIS. Fourth edition](https://www.packtpub.com/product/learn-qgis-fourth-edition/9781788997423)
 - [Graser & Peterson. 2020. QGIS Map Design](https://locatepress.com/qmd2)
 - [Graser et al. 2017. QGIS Becoming a GIS Power User](https://www.packtpub.com/product/qgis-becoming-a-gis-power-user/9781788299725)
@@ -306,6 +306,8 @@ Kultuurimälestiste andmeid võib vajadusel minu käest küsida. Kirjuta andres.
 **GISist humanitaarias ja üldiselt**
 
 - Murrieta-Flores, P., & Martins, B. 2019. The geospatial humanities: past, present and future. 33: 2424–2429 https://www.tandfonline.com/doi/full/10.1080/13658816.2019.1645336.
+- Presner, T., & Shepard, D. 2015. Mapping the Geospatial Turn. In S. Schreibman, R. Siemens, & J. Unsworth (eds) A new companion to digital humanities, 199–212. Wiley Blackwell
+- Bodenhamer, D.J. 2010. The Potential of Spatial Humanities. In D. J. Bodenhamer, J. Corrigan, & T. M. Harris (eds) The Spatial Humanities: GIS and The Future of Humanities Scholarship, 14–30. Indiana University Press
 - Ballas et al. 2018. GIS and the social sciences: Theory and application. Routledge.
 - Bolstad. 2016. A first text on geographic information systems, 5th edition.
 - Gregory & Geddes. 2014. Toward spatial humanities: Historical gis and spatial history.
