@@ -40,7 +40,7 @@ Struktuuri näide:
         - harjutus_3_kimber.jpeg
         - jne
         
-Praktikumis kasutatavad andmed leiate [Moodle'ist](https://moodle.ut.ee/). Laadige need alla, pakkige lahti (parempoolne klikk ja *Extract here*) ja asetage kausta *andmed*.
+Praktikumis kasutatavad andmed leiate [Moodle'ist](https://moodle.ut.ee/) ja ka lingilt [praktikumi andmed](https://drive.google.com/file/d/1O1GxuaLd_TztvyLw_8D7IIjPNYVxwq67/view?usp=sharing). Laadige need alla, pakkige lahti (parempoolne klikk ja *Extract here*) ja asetage kausta *andmed*.
 
 ## Esmane seadistamine ja kasutajaliides
 
